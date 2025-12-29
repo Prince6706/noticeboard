@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Notice Board • Revamped</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="nav">
+    <div class="brand">NoticeBoard</div>
+    <!-- Add button removed per request (add notice disabled) -->
+  </header>
+
+  <main class="main">
+    <section class="overview">
+      <div class="stat">
+        <h3 id="totalNotices">0</h3>
+        <p>Total Notices</p>
+      </div>
+      <div class="search">
+        <input id="searchInput" placeholder="Search by id or title…" />
+      </div>
+    </section>
+
+    <section id="noticesGrid" class="grid"> <!-- cards injected here --> </section>
+
+    <div id="emptyState" class="empty hidden">
+      <h3>No notices yet</h3><p>Add your first notice to get started.</p>
+    </div>
+  </main>
+
+  <!-- Modal for Add/Edit -->
+  <div id="modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true">
+      <header class="modal-header">
+        <h2 id="formTitle">Add Notice</h2>
+        <button id="modalClose" type="button" class="btn icon" aria-label="Close modal">✕</button>
+      </header>
+      <form id="noticeForm" class="modal-form">
+        <label>Title
+          <input id="noticeTitle" required />
+        </label>
+        <label>Description
+          <textarea id="noticeDescription" rows="6" required></textarea>
+        </label>
+        <div class="modal-actions">
+          <button type="submit" class="btn primary" id="submitBtn">Save</button>
+          <button type="button" class="btn" id="cancelBtn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
